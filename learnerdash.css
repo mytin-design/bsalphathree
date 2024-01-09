@@ -1,0 +1,1328 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: .5s ease;
+    scrollbar-width: thin;
+}
+
+
+
+:root {
+    --body: #fff;
+    --holder_backg: #fff;
+    --items-backg: #fff;
+}
+
+html body {
+
+    background: var(--body);
+    /*background-image: linear-gradient(23deg, rgba(91, 203, 247, 0.089), rgba(255, 255, 255, 0.151));*/
+}
+
+.wrapper > * {
+    border: 1px dotted #eea;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 12pc 1fr;
+    grid-template-areas: 
+    "header header header"
+    " aside central central "
+    "foo foo foo";
+}
+
+.dashboard {
+    grid-area: header;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options_sider {
+    grid-area: aside;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    
+}
+
+
+.padder {
+    border-bottom: 1px solid #eef;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    height: 35px;
+    font-size: 12px;
+}
+
+.padder:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.label {
+    padding-left: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+.default {
+    background-color: rgb(247, 245, 245);
+}
+.central {
+    grid-area: central;
+}
+
+.foo_ads {
+    grid-area: foo;
+}
+
+
+.home_box {
+    border-radius: 8px;
+    /*background-color: rgba(169, 169, 172, 0.048);
+    box-shadow: 0px 0px 4px;*/
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+/* this part has been exempted - accessed in the buttons
+.prof_det {
+    border-radius: 8px;
+    background-color: rgba(169, 169, 172, 0.048);
+    box-shadow: 0px 0px 4px;
+
+    height: 90%;
+    width: 30%;
+    padding: 8px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dash_user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    padding-left: 10px;
+    text-decoration: none;
+    color: #000;
+
+}
+
+.balance {
+    font-weight: bold;
+    padding-left: 50px;
+    text-decoration: none;
+    color: #000;
+}*/
+
+.request_btns {
+    border-radius: 8px;
+    padding: 10px;
+    /*background-color: rgba(169, 169, 172, 0.048);
+    box-shadow: 0px 0px 4px;*/
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-around;
+    width: 30%;
+}
+
+#pay_req, #loan_advance {
+    background-color: rgba(173, 170, 170, 0.103);
+    height: 35px;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+}
+
+#pay_req:hover, #loan_advance:hover {
+    cursor: pointer;
+    background-color: rgba(16, 49, 236, 0.815);
+    color: white;
+}
+
+
+/* CENTRAL BOX STYLES */
+
+.holder {
+    border-radius: .2pc;
+    margin: 5pc auto;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--holder_backg);
+    border: .1pc solid #eee;
+
+
+}
+
+.user_png {
+    border-radius: .4pc;
+    user-select: none;
+}
+
+.stud_upload_actions {
+    border: .1pc solid #eee;
+    border-radius: .5pc;
+    margin: 1pc;
+    padding: 1pc;
+}
+
+
+label[for="studprof_upload"] {
+    position: relative;
+    margin: 1pc;
+    padding: .5pc;
+    background-color: #eee;
+}
+
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    padding: 10px;
+    background-color: var(--items-backg);
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* Class created by js*/
+.nameofbtn {
+    border: none;
+    padding: .3pc;
+    border-radius: .4pc;
+}
+
+
+.nameofsavebtn {
+    padding: .5pc;
+    border: none;
+    border-radius: .4pc;
+}
+.data-box {
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--items-backg);
+    transition: background-color 1s;
+    /*filter: drop-shadow(0px 0px 5px);*/
+
+}
+
+
+
+.data-box:hover {
+    cursor: pointer;
+    background-color: rgba(173, 170, 170, 0.103);
+}
+
+
+
+
+.selector {
+    border: none;
+    padding: 10px;
+
+}
+
+
+.save_option {
+    text-decoration: none;
+}
+
+/* ===================mobiles styles for profile section=================*/
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 12pc 1fr;
+        grid-template-areas: 
+        "header header header"
+        " central central central "
+        "foo foo foo";
+    }
+    
+    .options_sider {
+        display: none;
+    }
+
+    .central {
+        grid-area: central;
+        padding: 10px;
+    }
+
+    .foo_ads {
+        grid-area: foo;
+    }
+
+    .request_btns {
+        width: 70%;
+    }
+
+    .profile_settings {
+    border-radius: 8px;
+    margin: 50px auto;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(199, 246, 250, 0.11);
+    }
+    .user-info {
+        margin-top: 20px;
+        width: 80%;
+    }
+
+    
+    
+}
+
+
+
+/* ==================================JOB DESCRIPTION STYLES =============================*/
+
+.job_settings {
+    border-radius: 8px;
+    margin: 50px auto;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--holder_backg);
+    border: .1pc solid #eee;
+}
+
+.boxer {
+    padding: 10px;
+    background-color: var(--items-backg);
+    padding: 10px;
+    /*filter: drop-shadow(0px 0px 5px);*/
+
+
+}
+
+.job_title {
+    font-size: 2rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.stat_indicator {
+    padding: .5pc .5pc;
+}
+
+.stats_left, .stats_right {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    
+    width: 40%;
+}
+
+.stats_one, .skill_level_stat, .rating_scale {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#skill_level {
+    padding: .5pc .5pc;
+}
+
+.job_status  {
+    display: flex;
+    
+}
+
+.stats_two {
+    display: flex;
+}
+
+
+.skills_section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills_title {
+    font-weight: bold;
+}
+.list_of_skills {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.subj_name {
+    padding: .5pc;
+    background-color: #eeeeee5b;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.subj_name:hover {
+    background-color: #eee;
+}
+
+.job_history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.job_activity {
+    padding: 1pc;
+}
+.job_hist_table {
+    border: 5px solid rgb(84, 241, 84);
+    width: 100%;
+}
+
+th {
+    border: 1px solid;
+}
+
+table {
+    border: 1px solid;
+    width: 100%;
+}
+
+/* ------------ ENROLLED SUBJECTS TAB CONTENTS -------------*/
+.tabsubjSection {
+    display: grid;
+    grid-template-columns: .5fr 2fr;
+    grid-auto-rows: auto;
+    gap: .5pc;
+}
+
+.subj_btns_holders {
+    border: .1pc solid #eee;
+    display: flex;
+    flex-flow: column;
+}
+
+.subj_btn_title {
+    padding: .5pc;
+    height: 2.5pc;
+    width: auto;
+    border: .1pc solid #eee;
+}
+
+
+/* ===========================mobile styles for job description section =============================*/
+
+@media screen and (max-width: 900px) {
+    .job_central {
+        padding: 20px;
+    }
+    .job_settings {
+        border-radius: 8px;
+        margin: 50px auto;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(199, 246, 250, 0.11);
+    }
+
+    .boxer {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-around;
+        width: 100%;
+
+    }
+
+    .list_of_skills {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+/*=============================================================== payment /loans sections styles ==============================================*/
+
+.payment_settings {
+    border-radius: 8px;
+    margin: 50px auto;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--holder_backg);
+    border: .1pc solid #eee;
+}
+
+.coin {
+    border-radius: 8px;
+    width: 100%;
+    background-color: var(--items-backg);
+    outline: none;
+    /*filter: drop-shadow(0px 0px 5px);*/
+
+
+}
+
+.set_currency {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+#currency_mode {
+    padding: .5pc .5pc;
+}
+.pay_loan_sec {
+    padding: 10px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pay {
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(243, 246, 247, 0.616);
+    transition: background-color 1s;
+}
+
+.pay:hover {
+    cursor: pointer;
+    background-color: rgba(63, 65, 65, 0.089);
+}
+
+
+.payment_options {
+    display: none;
+    position: absolute;
+    top: 43%;
+    left: 45.6%;
+    padding: .5pc .5pc;
+    background-color: rgb(243, 246, 247);
+    
+
+}
+
+.loan_options {
+    display: none;
+    position: absolute;
+    top: 42.5%;
+    left: 77%;
+    padding: .5pc .5pc;
+    background-color: rgb(243, 246, 247);
+
+}
+
+
+
+
+
+.p_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 100%;
+    color: #000;
+    text-decoration: none;
+    padding: 2px;
+    
+    cursor: pointer;
+}
+
+.p_btn:hover {
+    background-color: rgb(218, 224, 224);
+}
+
+/* on hover - displays buttons 
+.bal:hover .payment_options {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+*/
+
+/* on hover - displays buttons 
+
+.bal:hover .loan_options {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+
+*/
+
+/* transaction history */
+.history_toggle {
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.t_hist_btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hist_box {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hist_btn {
+    height: 35px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    color: #fff;
+}
+
+
+/* ============================mobile styles for payment section ==========================*/
+
+@media screen and (max-width: 900px) {
+    .payment_settings {
+        border-radius: 8px;
+        margin: 50px auto;
+        width: 100%;
+        height: fit-content;
+        padding: 20px;
+        display: flex;
+        flex-flow: column;
+        gap: 15px;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgba(199, 246, 250, 0.11);
+        
+    }
+
+    .coin {
+        display: flex;
+        flex-flow: column;
+        height: fit-content;
+        justify-content: space-around;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .history_toggle {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .t_hist_btns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .payment_options {
+        display: none;
+        position: absolute;
+        top: 20%;
+        left: 61.5%;
+        background-color: rgba(7, 7, 14, 0.301);
+    
+    }
+    
+    .loan_options {
+        display: none;
+        position: absolute;
+        top: 32%;
+        left: 59.5%;
+        background-color: rgba(7, 7, 14, 0.301);
+        z-index: 2;
+    }
+    
+}
+
+/*====================================================withdrawal/payment section=========================================*/
+
+.withdrawal_settings {
+    border-radius: 8px;
+    margin: 50px auto;
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--holder_backg);
+    border: .1pc solid #eee;
+}
+
+.with_bgc {
+    border-radius: 8px;
+    padding: 10px;
+    background-color: var(--items-backg);
+}
+
+.amount_set_tab {
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+
+.amount_tab {
+    width: 60%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.amt_bal {
+    padding: 5px;
+    width: 70%;
+    display: flex;
+    flex-flow: column;
+}
+
+#pay_action, #amount {
+    width: 120px;
+    height: 35px;
+    padding: .5pc .5pc;
+}
+
+#inputAmount {
+    padding: .5pc .5pc;
+}
+.method_title {
+    text-align: center;
+
+}
+
+.method {
+    text-align: end;
+    height: fit-content;
+    width: 100%;
+}
+
+.types_meth, .method_table {
+    width: 100%;
+    height: 300px;
+}
+th {
+    text-align: center;
+    background-color: rgba(215, 221, 221, 0.26);
+}
+
+tr:hover {
+    background-color: rgba(64, 66, 66, 0.068);
+    cursor: pointer;
+}
+
+
+.method_input {
+    margin-top: 30px;
+    padding: 5px;
+    width: 60%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mastercard_id {
+    height: 35px;
+    width: 90%;
+}
+
+#submit-width-data {
+    border: none;
+    height: 35px;
+    width: 100px;
+    cursor: pointer;
+}
+
+/* display for <=900px */
+
+@media only screen and  (max-width: 900px) {
+    .amount_set_tab {
+        width: 100%;
+    }
+
+    .amount_tab {
+        width: 100%;
+    }
+
+    .amt_bal {
+        width: 100%;
+    }
+}
+
+/* ================================================PORTFOLIO STYLES========================================================================*/
+
+.portfolio_settings {
+    border-radius: 8px;
+    margin: 50px auto;
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--holder_backg);
+    border: .1pc solid #eee;
+}
+
+.personal_info {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loc_tel, .info_contact, .other_p_info {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+
+}
+
+.skill_info {
+    width: 100%;
+    padding: 10px;
+}
+
+.box_info {
+    width: 100%;
+    border-left: 2px dotted;
+    padding-left: 10px;
+    padding: 10px;
+    background-color: var(--items-backg);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    /*filter: drop-shadow(0px 1px 5px);*/
+
+}
+
+.info_left {
+    padding-left: 30px;
+}
+
+.web_soft, .resp_des {
+    color: darkblue;
+}
+
+.skills_info {
+    padding-left: 10px;
+    width: 100%;
+}
+
+.inner_skill_sec {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.acts_title {
+    margin-bottom: 20px;
+}
+
+
+/* display for <=900px */
+
+@media only screen and (max-width: 900px) {
+    .info_contact {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+/* ======================================COMMUNITY STYLES ===========================================--*/
+.community_settings {
+    border-radius: 8px;
+    margin: 50px auto;
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-flow: column;
+    background-color: var(--holder_backg);
+    border: .1pc solid #eee;
+}
+.news {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+
+.comm_nav_panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.trending_btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.chat_box-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.newTopic-signal {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.newTopic {
+    display: flex;
+    gap: 10px;
+}
+
+.sec_one, .sec_two, .sec_three {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 5px;
+    flex-basis: 400px;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.discord {
+    border: 1px solid #eee;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+
+}
+
+.your-contacts {
+    flex-flow: column;
+    display: flex;
+    gap: 10px;
+    width: 15%;
+}
+
+.cont-box {
+    height: 100px;
+    overflow-y: scroll;
+    width: 100%;
+    scrollbar-width: thin;
+}
+.coms-cont {
+    width: 100%;
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    padding: .5pc;
+}
+
+.favs {
+    display: flex;
+    flex-flow: column;
+    margin-top: 20px;
+}
+
+.chat-room {
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+
+}
+
+
+
+.chatroom-holder {
+    padding: 10px;
+    height: fit-content;
+    width: 100%;
+    border-radius: 8px;
+    background-color: rgba(126, 122, 122, 0.13);
+}
+
+
+/* messages box styles */
+
+.current_message_contact {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    align-items: center;
+}
+
+.img_c_user {
+    height: 50px;
+    border-radius: 100%;
+}
+
+.message_actions {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.message-container {
+    padding: 10px;
+    background-color: rgba(128, 125, 122, 0.589);
+    border-radius: 9px;
+}
+
+.msg_box {
+    width: fit-content;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.message-box_2-1, .message-box_2-2, .message-box_2-3 {
+    float: right;
+}
+
+.chat-actions {
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.chatting-box {
+    width: 90%;
+    height: 35px;
+    background-color: #fff;
+}
+
+.userChatProf {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-chat_prof {
+    height: 25px;
+    border-radius: 100%;
+}
+
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+    gap: 5px;
+}
+
+li:hover {
+    background-color: rgba(26, 14, 14, 0.171);
+    cursor: default;
+}
+
+/* display <=900px */
+
+@media only screen and (max-width: 900px) {
+    .comm_nav_panel {
+        width: 100%;
+    }
+
+    .newTopic {
+        display: flex;
+        flex-flow: column;
+    }
+
+    /* chats styles */
+
+    .discord {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .your-contacts {
+        display: none;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .coms-cont {
+        width: 50%;
+    }
+
+    .msg_box {
+        margin: 5px;
+    }
+}
+
+/* ================================================EMPLOYEE PROGRAMS STYLES=====================================================--*/
+
+.emprog_settings {
+    border-radius: 8px;
+    margin: 50px auto;
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    background-color: var(--holder_backg);
+    border: .1pc solid #eee;
+    
+}
+
+.programs {
+
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    gap: 10px;
+
+
+}
+
+.program-items {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+}
+
+.prog-box {
+    border: 1px solid;
+    height: 50px;
+    width: 150px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--items-backg);
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.prog_box {
+    border: 1px solid;
+    height: 250px;
+    width: 250px;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--items-backg);
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.prog-box:hover, .prog_box:hover {
+    border: 6px solid rgba(226, 223, 223, 0.747);
+}
+
+/* DISPLAY FOR <=900PX */
+@media only screen and (max-width: 900px) {
+
+    .emprog_settings {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .programs {
+        width: 100%;
+        display: -webkit-inline-box;
+    
+    }
+        
+
+    .prog-box {
+        font-size: 1rem;
+        width: 110px;
+    }
+
+    .program-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .prog_box {
+        height: 100px;
+        width: 150px;
+        font-size: 1rem;
+    }
+}
+
+
+
+
+/* ===================================================HELP STYLES =================================================*/
+
+.help_page {
+    border-radius: 8px;
+    margin: 50px auto;
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    background-color: var(--holder_backg);
+    border: .1pc solid #eee;
+    
+}
+
+
+/* --------------------=========== AVAILABLE ASSIGN'S * ======================================*/
+
+.stuHr {
+    color: #eeeeee3d;
+}
+.assignBtns {
+    display: flex;
+    align-items: center;
+    gap: 1pc;
+}
+
+.assign_btn {
+    border: .1pc solid #eee;
+    height: 2.5pc;
+    width: 7pc;
+    display: flex;
+    align-items: center;justify-content: center;text-align: center;
+    text-decoration: none;
+    padding: .5pc;
+    background-color: #eeeeee5b;
+    border-radius: .4pc;
+}
+
+.uploader_inner {
+    padding: .5pc;
+}
+.upload_section {
+    border: .1pc solid #eeeeee71;
+    border-radius: 4px;
+    padding: .5pc;
+    width: 100%;
+
+
+}
+
+.upload_sec_title {
+    font-size: 16px;
+    margin: 1pc;
+}
+
+.table_input {
+    width: 100%;
+}
+
+
+.upload_submitter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: .5pc;
+}
+
+.upload_subj {
+    width: 100%;
+}
+
+.up_submitter {
+    border: none;
+    border-radius: .4pc;
+    background-color: blue;
+    color: white;
+    height: 2.5pc;
+    width: 5pc;
+}
